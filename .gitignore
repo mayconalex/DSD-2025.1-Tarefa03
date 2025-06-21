@@ -26,7 +26,7 @@ yarn-error.log*
 lerna-debug.log*
 
 # Diretório de dependências
-/cliente_nodejs/node_modules/
+/cliente/node_modules/
 .pnp
 .pnp.js
 
