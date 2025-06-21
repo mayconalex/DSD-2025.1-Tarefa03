@@ -1,0 +1,36 @@
+syntax = "proto3"; // versão 3 do Protobuf
+
+package alarme; // namespace
+
+service ServicoDeAlarme {
+  // RPC Unário: o cliente envia um alerta e espera uma confirmação
+  rpc NotificarIntrusao (AlertaIntrusao) returns (Confirmacao);
+
+  // RPC de Cliente de Streaming: o cliente envia um fluxo contínuo de status e o servidor responde uma única vez
+  rpc EnviarFluxoDeStatus (stream StatusAlarme) returns (Confirmacao);
+}
+
+// ---- MENSAGENS ----
+
+// alerta de intrusão
+message AlertaIntrusao {
+  string id_dispositivo = 1; // ID do alarme
+  int64 timestamp_utc = 2;   // data e hora do evento
+}
+
+// status do alarme
+message StatusAlarme {
+  enum Estado {
+    DESCONHECIDO = 0;
+    ARMADO = 1;
+    DESARMADO = 2;
+  }
+  Estado estado_atual = 1; // estado do alarme
+  string id_dispositivo = 2;
+}
+
+// resposta de confirmação do servidor
+message Confirmacao {
+  bool sucesso = 1;
+  string mensagem = 2;
+}
