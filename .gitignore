@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Arquivos gerados pelo gRPC (Python)
+# É uma boa prática não versionar arquivos gerados, pois eles
+# devem ser recriados a partir do .proto durante o build.
+*_pb2.py
+*_pb2_grpc.py
+
+# Node.js
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diretório de dependências
+/cliente_nodejs/node_modules/
+.pnp
+.pnp.js
+
+# Cache de dependências
+.npm
+.yarn-integrity
+
+# Arquivos de ambiente
+.env
+.env.test
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
