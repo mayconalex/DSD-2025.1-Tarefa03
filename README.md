@@ -25,6 +25,8 @@ O sistema é dividido em dois componentes principais:
         *   Ao detectar uma intrusão, faz uma chamada **Unary RPC** (`NotificarIntrusao`) para o servidor;
         *   Mantém um **Client Streaming RPC** (`EnviarFluxoDeStatus`) aberto com o servidor para enviar atualizações de estado em tempo real sempre que o alarme é armado ou desarmado.
 
+![Slide 16_9 - 2](https://github.com/user-attachments/assets/1642dd96-1a71-4ec7-90eb-2f3d76170a81)
+
 ## Protocolos e Tecnologias
 
 *   **Framework de Comunicação:** **gRPC**
